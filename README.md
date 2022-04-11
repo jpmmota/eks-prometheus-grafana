@@ -20,12 +20,12 @@ helm upgrade -i prometheus prometheus-community/prometheus \
     --set alertmanager.persistentVolume.storageClass="gp2",server.persistentVolume.storageClass="gp2"
 ```
 
-Check prometheus pods status
+4. Check prometheus pods status
 ```bash
 kubectl get pods -n prometheus
 ```
 
-Forwards prometheus port to your local computer on port 9090
+5. Forward prometheus port to your local computer on port 9090
 ```bash
 kubectl --namespace=prometheus port-forward deploy/prometheus-server 9090
 ```
